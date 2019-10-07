@@ -1,0 +1,38 @@
+//package com.company;
+import java.lang.reflect.Array;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Scanner;
+//import java.util.List;
+import java.util.*;
+import java.util.Arrays;
+import java.util.stream.Collectors;
+//package bg.codexio;
+
+
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        Integer num = Integer.parseInt(sc.nextLine());
+        Map<String, ArrayList<String>> synonyms = new LinkedHashMap<>();
+        String word = "";
+        String synonym = "";
+        while(num > 0){
+            word = sc.nextLine();
+            synonym = sc.nextLine();
+            if(!synonyms.containsKey(word)){
+                synonyms.put(word, new ArrayList<>());
+            }
+            synonyms.get(word).add(synonym);
+            num--;
+        }
+
+        synonyms.forEach((k,v) -> {
+            System.out.print(k + " - ");
+            System.out.println(String.join(", ", v));
+        });
+
+    }
+}
