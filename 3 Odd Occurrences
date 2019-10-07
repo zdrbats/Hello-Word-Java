@@ -1,0 +1,47 @@
+//package com.company;
+import java.lang.reflect.Array;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Scanner;
+//import java.util.List;
+import java.util.*;
+import java.util.Arrays;
+import java.util.stream.Collectors;
+//package bg.codexio;
+
+
+
+public class Main {
+    public static void main(String[] args) {
+
+
+        // 3 Odd Occurrences
+        Scanner sc = new Scanner(System.in);
+        ArrayList<String> itemsList = new ArrayList<>();
+        String[] rowIn = sc.nextLine().split(" ");
+        Map<String,Integer> oddOccurrences = new LinkedHashMap<>();
+
+        for( String item : rowIn ){
+            String itemLowerC = item.toLowerCase();
+            if (! oddOccurrences.containsKey(itemLowerC)){
+                oddOccurrences.put(itemLowerC, 1);
+            }else{
+                oddOccurrences.put(itemLowerC, oddOccurrences.get(itemLowerC) + 1);
+            }
+
+        }
+
+        for( var entry : oddOccurrences.entrySet() ){
+            if(entry.getValue() % 2 == 1){
+                itemsList.add(entry.getKey());
+            }
+        }
+
+        for( int i = 0; i< itemsList.size(); i++)   {
+            System.out.print(itemsList.get(i));
+            if( i < itemsList.size() - 1){
+                System.out.print(", ");
+            }
+        }
+    }
+}
