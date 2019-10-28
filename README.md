@@ -7,3 +7,7 @@ can I?
 
 information
 new try
+
+2.
+hey 
+after Softuni Task 2, from Lab Git and GitHub
